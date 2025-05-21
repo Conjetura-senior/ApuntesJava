@@ -1,4 +1,4 @@
-//MÉTODO BURBUJA
+//MÉTODO BURBUJA (BUBBLE SORT)
 for(int i=0; i<(nElementos-1);i++){
    for(int j=0; j<(nElementos-1);j++){
      if (arreglo[j]>arreglo[j+1]){
@@ -14,7 +14,25 @@ todos los ciclos, incluso cuando ya no hay más swaps necesarios. Esto lo hace i
 Complejidad computacional: O(n²)
 */
 
-//MÉTODO DE INSERCIÓN
+//MÉTODO POR SELECCIÓN (SELECTION SORT)
+for(int i=0;i<nElementos-1;i++){
+   minimo=i;
+   for(int j=i+1;j<nElementos;j++){
+      if(arreglo[minimo]>arreglo[j]){
+         minimo=j;
+      }
+   }
+   aux=arreglo[i];
+   arreglo[i]=arreglo[minimo];
+   arreglo[minimo]=aux;
+}
+/* OBSERVACIÓN
+Útil cuando el costo de intercambiar elementos es alto (pocos swaps), pero es lento incluso en datos parcialmente ordenados.
+Complejidad: O(n²) en todos los casos.
+*/
+
+
+//MÉTODO DE INSERCIÓN (INSERTION SORT)
 for(int i=0;i<nElementos;i++){
   pos=i;
   aux=arreglo[i];
